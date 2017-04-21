@@ -14,7 +14,11 @@
 
 @end
 
+#if defined(__IPHONE_10_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0)
 @interface LYSGuideView ()<CAAnimationDelegate>{
+#else
+@interface LYSGuideView (){
+#endif
     CAShapeLayer * _guideLayer;
     UIView *_showView;
     CAShapeLayer *_maskLayer;
